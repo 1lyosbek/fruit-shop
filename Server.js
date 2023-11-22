@@ -1,6 +1,6 @@
 const express = require("express");
 const { engine } = require("express-handlebars");
-const path = require("path");
+const { path } = require("path");
 const app = express();
 app.use(express.json());
 
