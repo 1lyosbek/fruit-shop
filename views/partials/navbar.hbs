@@ -1,0 +1,48 @@
+<div class="nav">
+    <nav id="navbar" class="navbar">
+        <a href="/connect">Bizga bog'laning</a>
+        <a href="/about">Biz haqimizda</a>
+        <a href="/meals">Taomlar</a>
+    <div class="dropdown">
+        <li class="nav-items dropbtn">
+            <a href="/clothes">Kiyimlar</a>
+        </li>
+        <div class="dropdown-content">
+            <a href="/women">Ayollar</a>
+            <a href="/men">Erkaklar</a>
+            <a href="/children">Bolalar</a>
+        </div>
+    </div>
+        <a href="">Maishiy Texnika</a>
+        <a href="">Shikoyatlar uchun</a>
+        <button id="mode-btn">
+            <img src="/images/dark.svg" alt="">
+        </button>
+        <button class="deliver-btn">Deliver</button>
+    </nav>
+</div>
+<script>
+    let modeBtn = document.getElementById("mode-btn");
+
+        modeBtn.addEventListener("click", function () {
+            if (document.body.className != "dark") {
+                this.firstElementChild.src = "images/light.svg";
+            } else {
+                this.firstElementChild.src = "images/dark.svg";
+            }
+            document.body.classList.toggle("dark");
+        });
+
+        window.addEventListener("scroll", function () {
+            shrink();
+        });
+        let navbar = document.getElementById("navbar");
+        function shrink() {
+            if (scrollY > 100) {
+                navbar.classList.add("navbar-shrink");
+            } else {
+                navbar.classList.remove("navbar-shrink");
+            }
+        }
+</script>
+
